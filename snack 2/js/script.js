@@ -36,9 +36,26 @@ function getRandomFouls() {
     return random;
 }
 
-console.log(getRandomFouls());
 
 
 function getRandomPoint() {
     let random = parseInt(Math.floor(Math.random() * 30) + 1);
+    return random;
 }
+
+
+let newArray = [];
+
+
+for(let i = 0; i < team.length; i++) {
+    let curTeam = team[i];
+    let randomNumber = getRandomPoint();
+    curTeam.punti = randomNumber;
+    let randomNumberfouls = getRandomFouls();
+    curTeam.falliSubiti = randomNumberfouls;    
+    newArray.push(curTeam.nome, curTeam.falliSubiti)    
+}
+
+console.log(newArray);
+
+
